@@ -97,12 +97,9 @@ func runClientBackend(retval chan error)  {
 				c.JSON(http.StatusOK, &body)
 				return
 			}
-			c.Status(http.StatusNotFound)
-			return
 		}
-
-
-		fmt.Println(deviceId, body.Msg)
+		c.Status(http.StatusNotFound)
+		return
 	})
 
 	fmt.Println("starting client backend on port :3000")
