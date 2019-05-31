@@ -126,7 +126,7 @@ func main() {
 		Comment: "a second device",
 		Ip:      "172.168.10.1",
 	}
-	devices[1] = deviceEntry{
+	devices[2] = deviceEntry{
 		Id:      "smartscreen-3",
 		Name:    "ANOTHER DEVICE",
 		Comment: "a third device",
