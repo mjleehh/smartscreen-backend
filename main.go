@@ -23,7 +23,7 @@ type deviceEntries struct {
 	Devices []deviceEntry `json:"devices"`
 }
 
-var devices = make([]deviceEntry, 2)
+var devices = make([]deviceEntry, 3)
 
 func runDeviceBackend(retval chan error) {
 	deviceBackend := gin.Default()
@@ -121,10 +121,16 @@ func main() {
 		Ip:      "192.168.80.103",
 	}
 	devices[1] = deviceEntry{
-		Id:      "udlap-2",
+		Id:      "smartscreen-2",
 		Name:    "SOME OTHER DEVICE",
-		Comment: "just any device",
+		Comment: "a second device",
 		Ip:      "172.168.10.1",
+	}
+	devices[1] = deviceEntry{
+		Id:      "smartscreen-3",
+		Name:    "ANOTHER DEVICE",
+		Comment: "a third device",
+		Ip:      "172.168.10.24",
 	}
 
 	deviceBackendChan := make(chan error)
